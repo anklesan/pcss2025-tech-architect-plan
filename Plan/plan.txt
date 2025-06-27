@@ -1,0 +1,168 @@
+
+
+TECHNICAL ARCHITECT – PCSS 2025 PRE-SPRINT PLAN
+Role: Technical Architect
+Duration: June 27 – July 23
+Objective: Lay the technical, organizational, and collaborative groundwork for a synchronized multi-team agentic AI development sprint.
+
+---
+
+WEEK 1 – DEFINE & ALIGN (June 27 – July 3)
+
+**Primary Goal:** Define the architecture, interface standards, and MVP boundaries that all platform teams will follow.
+
+**Tasks:**
+
+* [ ] Draft system-level architecture diagram of AMIE (agents, flows, inputs/outputs, orchestration layer).
+* [ ] Identify required agent roles: parser, analyzer, scorer, summarizer.
+* [ ] Design agent-to-agent communication pattern (direct calls, shared state, pub-sub, etc.).
+* [ ] Define interface specs:
+
+  * Input format: uploaded manuscript (PDF/text), preprocessed payload
+  * Output format: JSON with structured evaluation
+  * Metadata: doc ID, timestamps, user query trace
+* [ ] List MVP required features vs stretch goals:
+
+  * Core: ingest → evaluate → score → summarize
+  * Optional: GUI, keyword extraction, risk scoring, visualization
+* [ ] Finalize PRD v1.0 with input from John
+
+**Deliverables:**
+
+* AMIE\_System\_Architecture\_v1.pdf
+* Agent\_Interface\_Spec\_v1.md
+* AMIE\_MVP\_Features\_List.md
+* PCSS2025\_PRD\_Draft\_v1.pdf
+
+---
+
+WEEK 2 – INFRASTRUCTURE SETUP (July 4 – July 10)
+
+**Primary Goal:** Establish the version control structure, boards, and workflow artifacts to support rapid, collaborative engineering.
+
+**Tasks:**
+
+* [ ] Create 3 GitHub repos or one monorepo with 3 branches (azure/, aws/, google/)
+* [ ] Define standard folder structure:
+
+  * /src – all source code
+  * /agents – agent logic per role
+  * /prompts – prompt templates for LLMs
+  * /data – static test files, sample manuscripts
+  * /tests – agent-level and end-to-end test cases
+  * /docs – architecture diagrams, specs
+* [ ] Configure GitHub Projects boards per team:
+
+  * Columns: Backlog, To Do, In Progress, Blocked, Review, Done
+  * Labels: `agent`, `rag`, `infra`, `ui`, `bug`, `doc`
+* [ ] Create reusable issue templates:
+
+  * New Feature
+  * Bug Report
+  * RAG Prompt Test Case
+* [ ] Draft a guide for sprint rhythm, issue handling, PR workflow
+
+**Deliverables:**
+
+* Platform\_Repo\_Scaffold\_Template.zip
+* GitHub\_Project\_Board\_Guide.md
+* GitHub\_Issue\_Templates.yaml
+* Codebase\_Standards\_and\_Conventions.md
+
+---
+
+WEEK 3 – DOCS, PLAYBOOKS, EVALUATION (July 11 – July 17)
+
+**Primary Goal:** Equip teams with structured playbooks for agent development, platform-specific quirks, and shared evaluation frameworks.
+
+**Tasks:**
+
+* [ ] Write team role guide: responsibilities of each member (Lead, LLM Engineer, Backend Dev, etc.)
+* [ ] Write collaboration playbook:
+
+  * Meeting cadence
+  * Demo structure (Loom vs live)
+  * Feedback and retros
+* [ ] Draft prompt engineering strategy:
+
+  * Examples of agent chaining and context passing
+  * Input sanitation and guardrails
+  * Token length awareness
+* [ ] Research and document platform-specific constraints:
+
+  * Azure: agent memory, GPT-4 limitations, Copilot Studio tooling
+  * AWS: Bedrock orchestration, cost tokens, API config
+  * Google: prompt chaining in AI Studio, UI integrations
+* [ ] Define evaluation rubric:
+
+  * Build velocity
+  * Cost and overhead
+  * Agentic clarity and modularity
+  * RAG accuracy and traceability
+  * UX smoothness
+
+**Deliverables:**
+
+* Team\_Roles\_and\_Expectations\_PCSP2025.pdf
+* Communication\_Collaboration\_Guide.pdf
+* Prompt\_Strategy\_Playbook.md
+* Platform\_CheatSheets/
+
+  * Azure\_Agentic\_Cookbook.md
+  * AWS\_Bedrock\_Patterns.md
+  * Google\_AIStudio\_RAG\_Guide.md
+* Platform\_Evaluation\_Scorecard\_Template.xlsx
+
+---
+
+WEEK 4 – DRY RUN, SYNC & KICKOFF PREP (July 18 – July 23)
+
+**Primary Goal:** Validate that everything works, coordinate kickoff, and seed the teams with a clear starting point.
+
+**Tasks:**
+
+* [ ] Clone all repos and confirm no permissions errors
+* [ ] Add all team members to GitHub org and Teams chat
+* [ ] Create a toy starter pipeline for each platform:
+
+  * Upload manuscript (hardcoded)
+  * Parse dummy response from mock agent
+  * Score with a fake RAG call
+* [ ] Write 10–15 pre-filled GitHub issues per team:
+
+  * “Implement agent parser shell”
+  * “Define document upload contract”
+  * “Integrate Azure OpenAI endpoint”
+* [ ] Schedule all kickoff meetings:
+
+  * Whole-program launch
+  * 1:1s with each team lead
+  * Optional mentor sessions
+* [ ] Prepare kickoff slides:
+
+  * Timeline overview
+  * Weekly expectations
+  * Evaluation method
+  * How final demos will be judged
+
+**Deliverables:**
+
+* Kickoff\_Slide\_Deck\_PCSP2025.pptx
+* Platform\_StarterKits/
+
+  * CLI-based doc ingestion + mock agent + dummy output
+* Example\_Issues\_and\_Sprint\_Board\_Tasks.md
+* Readiness\_Checklist\_Full.txt
+* Kickoff\_Calendar\_Invites.ics
+
+---
+
+TOOLS TO MASTER BEFORE JULY 24:
+
+* GitHub: branching, PR review, protected branches, Actions
+* Draw\.io / Whimsical: sequence diagrams, agent maps
+* Markdown / Google Docs / Notion: specs, guides, and prompts
+* Excel / Google Sheets: evaluation matrix, velocity tracking
+* Microsoft Teams: weekly syncs, files, video calls, chat threads
+
+---
